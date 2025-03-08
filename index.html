@@ -10,14 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
     /* Reset & Dasar */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('background.png') no-repeat center center fixed;
+      /* Background image diambil dari marker */
+      background: url('<!-- EDIT: BG IMAGE -->background.png<!-- END EDIT: BG IMAGE -->') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       line-height: 1.6;
@@ -40,48 +37,33 @@
       font-size: 1.5em;
       font-weight: 600;
     }
-    nav ul {
-      display: flex;
-      list-style: none;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 20px; }
     nav ul li a {
       text-decoration: none;
       color: #fff;
       transition: color 0.3s;
     }
-    nav ul li a:hover {
-      color: #f39c12;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
+    nav ul li a:hover { color: #f39c12; }
+    .menu-toggle { display: none; font-size: 1.5em; cursor: pointer; }
+    /* Panel Menu tersembunyi */
+    nav ul li.panel-menu { display: none; }
     /* Header Banner */
     header {
       margin-top: 60px; /* offset untuk menu fixed */
-      background: url('banner.jpg') no-repeat center center;
+      background: url('<!-- EDIT: BANNER IMAGE -->banner.jpg<!-- END EDIT: BANNER IMAGE -->') no-repeat center center;
       background-size: cover;
       height: 350px;
       position: relative;
     }
     header::after {
       content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.5);
       animation: pulse 3s infinite;
     }
-    @keyframes pulse {
-      0% { opacity: 0.5; }
-      50% { opacity: 0.8; }
-      100% { opacity: 0.5; }
-    }
+    @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 0.8; } 100% { opacity: 0.5; } }
     header .header-content {
       position: absolute;
       bottom: 20px;
@@ -112,141 +94,52 @@
       padding-bottom: 10px;
     }
     /* Server Info Section */
-    .server-info {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .server-info p {
-      font-size: 1.2em;
-      margin: 5px 0;
-    }
+    .server-info { text-align: center; margin-bottom: 40px; }
+    .server-info p { font-size: 1.2em; margin: 5px 0; }
     /* Rank Section */
-    .rank-section .rank {
-      margin-bottom: 20px;
-    }
-    .rank-section .rank h3 {
-      font-size: 1.8em;
-      color: #f39c12;
-      margin-bottom: 10px;
-    }
-    .rank-section .rank ul {
-      list-style: none;
-      margin-left: 20px;
-    }
-    .rank-section .rank ul li {
-      margin-bottom: 5px;
-    }
+    .rank-section .rank { margin-bottom: 20px; }
+    .rank-section .rank h3 { font-size: 1.8em; color: #f39c12; margin-bottom: 10px; }
+    .rank-section .rank ul { list-style: none; margin-left: 20px; }
+    .rank-section .rank ul li { margin-bottom: 5px; }
     /* Commands & Tutorial */
-    .commands ul,
-    .tutorial-commands ul,
-    .cara-bermain ul {
+    .commands ul, .tutorial-commands ul, .cara-bermain ul {
       list-style-type: square;
       margin-left: 20px;
     }
-    .commands ul li,
-    .tutorial-commands ul li {
-      margin-bottom: 5px;
-      color: #2ecc71;
-    }
-    .cara-bermain ul li {
-      margin-bottom: 5px;
-      color: #9b59b6;
-    }
+    .commands ul li, .tutorial-commands ul li { margin-bottom: 5px; color: #2ecc71; }
+    .cara-bermain ul li { margin-bottom: 5px; color: #9b59b6; }
     /* RedProtect Section */
-    .redprotect-section ul {
-      list-style-type: circle;
-      margin-left: 20px;
-    }
-    .redprotect-section ul li {
-      margin-bottom: 5px;
-      color: #e67e22;
-    }
+    .redprotect-section ul { list-style-type: circle; margin-left: 20px; }
+    .redprotect-section ul li { margin-bottom: 5px; color: #e67e22; }
+    .redprotect-section p { margin-bottom: 10px; }
     .redprotect-section img {
       max-width: 100%;
       border: 2px solid #fff;
       margin-top: 20px;
       border-radius: 10px;
     }
-    /* News Section */
-    .news-section ul {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    .news-section li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 5px;
-    }
-    /* FAQ Section */
-    .faq-section dt {
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    .faq-section dd {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-    /* Gallery Section */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    .gallery img {
-      max-width: 100%;
-      border: 2px solid #fff;
-      border-radius: 5px;
-    }
-    /* Leaderboard Section */
-    .leaderboard table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .leaderboard th, .leaderboard td {
-      border: 1px solid #fff;
-      padding: 8px;
-      text-align: center;
-    }
-    /* Event Calendar Section */
-    .event-calendar {
-      overflow-x: auto;
-    }
-    .event-calendar table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .event-calendar th, .event-calendar td {
-      border: 1px solid #fff;
-      padding: 8px;
-      text-align: center;
-    }
-    /* Community Section */
-    .community {
-      text-align: center;
-    }
-    .community a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #7289da;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .community a:hover {
-      background: #5b6eae;
-    }
+    <!-- Marker untuk info RedProtect -->
+    <!-- EDIT: REDPROTECT INFO -->...<!-- END EDIT: REDPROTECT INFO -->
+    /* Guide Playing Section */
+    .cara-bermain ul { margin-left: 20px; }
+    <!-- Marker untuk panduan bermain -->
+    <!-- EDIT: GUIDE PLAYING -->...<!-- END EDIT: GUIDE PLAYING -->
+    /* Maintenance & Event Section */
+    <style>
+    .maintenance-event { margin-bottom: 40px; }
+    .maintenance-event p { margin-bottom: 10px; }
+    </style>
+    <!-- EDIT: MAINTENANCE EVENT -->
+    <!-- Section ini akan diedit melalui panel -->
+    <section class="maintenance-event" id="maintenance-event">
+      <h2>Maintenance &amp; Event</h2>
+      <p>Jadwal maintenance: Maintenance rutin setiap hari Minggu pukul 03.00 WIB.</p>
+      <p>Event: Turnamen PvP setiap bulan.</p>
+    </section>
+    <!-- END EDIT: MAINTENANCE EVENT -->
     /* QRIS Section */
-    .qris {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .qris img {
-      max-width: 250px;
-    }
+    .qris { text-align: center; margin: 40px 0; }
+    .qris img { max-width: 250px; }
     /* Footer Credits */
     footer {
       text-align: center;
@@ -257,36 +150,17 @@
     }
     /* Responsive Design */
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.8);
-        display: none;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      nav ul li {
-        margin: 10px 0;
-        text-align: center;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      header .header-content h1 {
-        font-size: 1.8em;
-      }
+      nav ul { flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: rgba(0,0,0,0.8); display: none; }
+      nav ul.active { display: flex; }
+      nav ul li { margin: 10px 0; text-align: center; }
+      .menu-toggle { display: block; }
+      header .header-content h1 { font-size: 1.8em; }
     }
     /* Rain Effect */
     .rain {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       pointer-events: none;
       z-index: 999;
     }
@@ -295,21 +169,21 @@
       bottom: 100%;
       width: 2px;
       height: 15px;
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255,255,255,0.3);
       animation: fall linear infinite;
     }
-    @keyframes fall {
-      to { transform: translateY(100vh); }
-    }
+    @keyframes fall { to { transform: translateY(100vh); } }
   </style>
 </head>
 <body>
-  <!-- Efek Hujan -->
+  <!-- Rain Effect -->
   <div class="rain" id="rain"></div>
   
   <!-- Navigation Menu -->
   <nav>
-    <div class="logo">ZANNOTROP</div>
+    <div class="logo">
+      <!-- EDIT: LOGO -->ZANNOTROP<!-- END EDIT: LOGO -->
+    </div>
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <ul id="nav-menu">
       <li><a href="#home">Home</a></li>
@@ -318,20 +192,27 @@
       <li><a href="#tutorial">Tutorial</a></li>
       <li><a href="#redprotect">RedProtect</a></li>
       <li><a href="#cara-bermain">Cara Bermain</a></li>
+      <li><a href="#maintenance-event">Maintenance &amp; Event</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#leaderboard">Leaderboard</a></li>
-      <li><a href="#event-calendar">Event</a></li>
+      <li><a href="#event-calendar">Event Calendar</a></li>
       <li><a href="#community">Community</a></li>
+      <!-- Hidden Panel Menu -->
+      <li class="panel-menu" id="panel-menu"><a href="panel.html">Panel</a></li>
     </ul>
   </nav>
   
   <!-- Header Banner -->
   <header id="home">
     <div class="header-content">
-      <h1 class="animate__animated animate__fadeInDown">Wiki Minecraft Server ZANNOTROP</h1>
-      <p class="animate__animated animate__fadeInUp">Versi Terbaru: Java &amp; Bedrock</p>
+      <h1 class="animate__animated animate__fadeInDown">
+        <!-- EDIT: HEADER TITLE -->Wiki Minecraft Server ZANNOTROP<!-- END EDIT: HEADER TITLE -->
+      </h1>
+      <p class="animate__animated animate__fadeInUp">
+        <!-- EDIT: HEADER SUBTITLE -->Versi Terbaru: Java &amp; Bedrock<!-- END EDIT: HEADER SUBTITLE -->
+      </p>
     </div>
   </header>
   
@@ -340,14 +221,15 @@
     <!-- Server Info Section -->
     <section class="server-info" id="server-info">
       <h2>Server Info</h2>
-      <p><strong>IP:</strong> zannotrop.vpsmasterhosting.my</p>
-      <p><strong>Port:</strong> 26055</p>
+      <p><strong>IP:</strong> <!-- EDIT: SERVER IP -->zannotrop.vpsmasterhosting.my<!-- END EDIT: SERVER IP --></p>
+      <p><strong>Port:</strong> <!-- EDIT: SERVER PORT -->26055<!-- END EDIT: SERVER PORT --></p>
       <p>Support untuk versi Java dan Bedrock</p>
     </section>
     
     <!-- Rank Section -->
     <section class="rank-section" id="rank">
       <h2>List Rank &amp; Cara Land (RedProtect)</h2>
+      <!-- Daftar Rank statis -->
       <div class="rank">
         <h3># REBORN</h3>
         <ul>
@@ -445,6 +327,7 @@
       <h2>Fitur Wiki: Survival &amp; Command Essentials untuk Member</h2>
       <p>Panduan bertahan hidup dan command dasar untuk member (Essentials):</p>
       <div class="commands">
+        <!-- EDIT: COMMANDS -->
         <ul>
           <li><strong>/spawn</strong> – Teleport ke spawn server</li>
           <li><strong>/home</strong> – Teleport ke rumah yang telah di-set</li>
@@ -455,25 +338,28 @@
           <li><strong>/msg</strong> – Mengirim pesan ke pemain lain</li>
           <li><strong>/reply</strong> – Membalas pesan terakhir</li>
         </ul>
+        <!-- END EDIT: COMMANDS -->
       </div>
     </section>
     
     <!-- RedProtect Section -->
     <section class="redprotect-section" id="redprotect">
       <h2>Panduan RedProtect</h2>
+      <!-- EDIT: REDPROTECT INFO -->
       <p>Untuk melindungi wilayah menggunakan RedProtect, ikuti langkah berikut:</p>
       <ul>
         <li>Buat kotak wilayah menggunakan <strong>pager</strong> (alat khusus untuk menentukan area).</li>
         <li>Pasang sebuah sign di pager dan ketik <strong>[rp]</strong> pada sign tersebut.</li>
         <li>Gunakan perintah tambahan RedProtect jika diperlukan untuk mengatur flag dan izin wilayah.</li>
       </ul>
-      <!-- Foto tutorial cara land rp -->
+      <!-- END EDIT: REDPROTECT INFO -->
       <img src="rptutor.png" alt="Tutorial RedProtect Land">
     </section>
     
     <!-- Cara Bermain Section -->
     <section class="cara-bermain" id="cara-bermain">
       <h2>Cara Bermain Minecraft</h2>
+      <!-- EDIT: GUIDE PLAYING -->
       <p>Berikut beberapa tips dan panduan bermain Minecraft ala fandom:</p>
       <ul>
         <li>Pelajari dasar-dasar bertani, bertahan hidup, dan membangun.</li>
@@ -482,106 +368,17 @@
         <li>Coba mode permainan seperti survival, creative, dan adventure.</li>
         <li>Manfaatkan command dasar untuk mempermudah eksplorasi dan permainan.</li>
       </ul>
+      <!-- END EDIT: GUIDE PLAYING -->
     </section>
     
-    <!-- News & Updates Section -->
-    <section class="news-section" id="news">
-      <h2>News &amp; Updates</h2>
-      <ul>
-        <li><strong>Update 1:</strong> Server telah diupgrade ke versi terbaru dengan fitur baru.</li>
-        <li><strong>Event:</strong> Turnamen PvP akan diadakan minggu depan!</li>
-        <li><strong>Maintenance:</strong> Jadwal maintenance rutin setiap hari Minggu pukul 03.00 WIB.</li>
-      </ul>
+    <!-- Maintenance & Event Section -->
+    <!-- EDIT: MAINTENANCE EVENT -->
+    <section class="maintenance-event" id="maintenance-event">
+      <h2>Maintenance &amp; Event</h2>
+      <p>Jadwal maintenance: Maintenance rutin setiap hari Minggu pukul 03.00 WIB.</p>
+      <p>Event: Turnamen PvP setiap bulan.</p>
     </section>
-    
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-      <h2>FAQ</h2>
-      <dl>
-        <dt>Bagaimana cara mendaftar di server?</dt>
-        <dd>Pemain dapat langsung join melalui IP yang tertera. Tidak diperlukan registrasi khusus.</dd>
-        <dt>Apa syarat untuk mendapatkan kit?</dt>
-        <dd>Kit diberikan sesuai rank dan biasanya diberikan sekali saat join. Periksa peraturan server untuk detailnya.</dd>
-        <dt>Bagaimana jika mengalami lag?</dt>
-        <dd>Pastikan koneksi internet stabil dan hubungi admin jika masalah berlanjut.</dd>
-      </dl>
-    </section>
-    
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <!-- Ganti src dengan path gambar yang sesuai -->
-        <img src="banner.jpg" alt="Screenshot 1" width="300">
-        <img src="rptutor.png" alt="Screenshot 2" width="300">
-        <img src="qris.png" alt="Screenshot 3" width="300">
-      </div>
-    </section>
-    
-    <!-- Leaderboard Section -->
-    <section class="leaderboard" id="leaderboard">
-      <h2>Leaderboard Pemain</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Peringkat</th>
-            <th>Nama Pemain</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>PlayerOne</td>
-            <td>1500</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>PlayerTwo</td>
-            <td>1300</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>PlayerThree</td>
-            <td>1200</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <!-- Event Calendar Section -->
-    <section class="event-calendar" id="event-calendar">
-      <h2>Event Calendar</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>Event</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10/03/2025</td>
-            <td>Turnamen PvP</td>
-          </tr>
-          <tr>
-            <td>15/03/2025</td>
-            <td>Maintenance Server</td>
-          </tr>
-          <tr>
-            <td>20/03/2025</td>
-            <td>Event Build Challenge</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <!-- Community Section -->
-    <section class="community" id="community">
-      <h2>Community</h2>
-      <p>Bergabunglah dengan komunitas kami untuk update, event, dan diskusi!</p>
-      <a href="https://discord.gg/pweGnUgX" target="_blank">Join Discord</a>
-    </section>
+    <!-- END EDIT: MAINTENANCE EVENT -->
     
     <!-- QRIS Payment Section -->
     <section class="qris">
